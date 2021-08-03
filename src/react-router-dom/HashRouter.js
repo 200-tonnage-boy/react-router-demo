@@ -1,5 +1,5 @@
 import React from 'react'
-import {createHashHistory} from 'history'
+import {createHashHistory} from '../history/index'
 import { Router } from '../react-router'
 class HashRouter extends React.Component  {
   history = createHashHistory()

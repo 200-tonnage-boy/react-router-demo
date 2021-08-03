@@ -4,7 +4,7 @@ import Acom from './components/Acom'
 import Bcom from './components/Bcom'
 import App from "./App";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   HashRouter,
   Switch,
   Route,
