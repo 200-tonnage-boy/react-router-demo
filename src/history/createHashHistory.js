@@ -21,7 +21,7 @@ function createHashHistory() {
       action,
       location:{pathname,state}
     })
-    if (action === 'PUSH') {// push的时候注意，从当前index+1添加，然后截断后面的
+    if (action === 'PUSH'||!action) {// push的时候注意，从当前index+1添加，然后截断后面的
       historyStack[++historyIndex] = history.location
       // 截断后面的
       historyStack = historyStack.filter((item,index) => index<=historyIndex)
@@ -30,6 +30,7 @@ function createHashHistory() {
       //调用监听函数的时候把当前location传递进去；
       cb(history.location)// 现在先只传个pathname
     })
+    action=null
   })
   function go(n) {
     // 找出历史栈中对应的数据，然后将pathname赋值给hash 引起变化就可以了
