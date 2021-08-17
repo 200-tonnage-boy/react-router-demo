@@ -1,9 +1,22 @@
 import  {pathToRegexp} from 'path-to-regexp';
+
+const cache = {};
+const cacheLimit = 10000;
+let cacheCount = 0;
 function compilePath(path, options) {
+  const cacheKey = `${options.end}${options.strict}${options.sensitive}`;
+  const pathCache = cache[cacheKey] || (cache[cacheKey] = {});
+  if (pathCache[path]) return pathCache[path];
   const keys = []// 提取出来参数
   const regexp = pathToRegexp(path,keys,options)// 匹配路径的正则表达式，option配置
-  return {keys, regexp}
+  const res = {keys, regexp}
+  if (cacheCount < cacheLimit) {// 不超出上限就添加缓存；
+    pathCache[path] = res;
+    cacheCount++;
+  }
+  return res
 }
+
 /**
  * 
  * @param {*} pathName 浏览器当前真实的路径名
