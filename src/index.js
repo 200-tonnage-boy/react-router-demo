@@ -16,7 +16,8 @@ ReactDOM.render(
     <div>
       <ul>
         <li>
-          <a href="#/a">to A</a>
+          {/* url1:#/a/2/cjy   url2：#/a?id=2&name=cjy */}
+          <a href="#/a/2/cjy">to A</a>
         </li>
         <li>
           <a href="#/b">to B</a>
@@ -24,7 +25,7 @@ ReactDOM.render(
       </ul>
     </div>
     <div style={{ height: "500px", border: "1px solid" }}>
-      <Route exact path="/a" component={Acom}>
+      <Route exact path="/a/:id/:name" component={Acom}>
       </Route>
       <Route path="/b" component={Bcom}>
       </Route>

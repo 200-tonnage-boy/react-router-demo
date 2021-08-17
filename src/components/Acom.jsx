@@ -1,5 +1,6 @@
+import {useLocation} from 'react-router'
 const Acom = (props) => {
-  console.log("组件A", props);
+  console.log("组件A", props, useLocation());
   // ('/b',{name:'xxx'})
   // {pathname:'/b',state:{name:'xxx'}}
   return (
