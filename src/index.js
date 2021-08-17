@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Acom from './components/Acom'
-import Bcom from './components/Bcom'
+import Acom from "./components/Acom";
+import Bcom from "./components/Bcom";
 import App from "./App";
 import {
   BrowserRouter,
@@ -9,7 +9,7 @@ import {
   Switch,
   Route,
   Link,
-} from "react-router-dom";
+} from "./react-router-dom";
 
 ReactDOM.render(
   <HashRouter>
@@ -25,10 +25,11 @@ ReactDOM.render(
       </ul>
     </div>
     <div style={{ height: "500px", border: "1px solid" }}>
-      <Route exact path="/a/:id/:name" component={Acom}>
-      </Route>
-      <Route path="/b" component={Bcom}>
-      </Route>
+      <Switch>
+        <Route exact path="/a/:id/:name" component={Acom}></Route>
+        <Route exact path="/a/:id/:name" component={Bcom}></Route>
+        <Route path="/b" component={Bcom}></Route>
+      </Switch>
     </div>
   </HashRouter>,
   document.getElementById("root")
