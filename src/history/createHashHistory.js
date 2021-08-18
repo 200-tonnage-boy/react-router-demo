@@ -15,6 +15,7 @@ function createHashHistory() {
   }
   window.addEventListener('hashchange',()=>{
     // 取的时候注意分割#号；
+    console.log('hashchange', window.location.hash.slice(1))
     let pathname = window.location.hash.slice(1)
     // 监听到改变后改变history的location
     Object.assign(history,{
@@ -56,6 +57,7 @@ function createHashHistory() {
       state = pathname.state;
       pathname = pathname.pathname
     }
+    console.log('hash push')
     window.location.hash = pathname
   }
   function goBack() {

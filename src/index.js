@@ -9,6 +9,7 @@ import {
   Switch,
   Route,
   Link,
+  Redirect
 } from "./react-router-dom";
 
 ReactDOM.render(
@@ -22,6 +23,9 @@ ReactDOM.render(
         <li>
           <a href="#/b">to B</a>
         </li>
+        <li>
+          <a href="#/xxx">匹配不到</a>
+        </li>
       </ul>
     </div>
     <div style={{ height: "500px", border: "1px solid" }}>
@@ -29,6 +33,7 @@ ReactDOM.render(
         <Route exact path="/a/:id/:name" component={Acom}></Route>
         <Route exact path="/a/:id/:name" component={Bcom}></Route>
         <Route path="/b" component={Bcom}></Route>
+        <Redirect to='/b' />
       </Switch>
     </div>
   </HashRouter>,

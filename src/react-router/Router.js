@@ -12,6 +12,7 @@ class Router extends React.Component {
       location: props.history.location
     }
     this.unListen = props.history.listen((location) => {// 用于监听路由的变化，变化后将最新的location传递下去，方法返回卸载函数，用于卸载监听；
+      console.log('router',location)
       this.setState({
         location: location
       })
