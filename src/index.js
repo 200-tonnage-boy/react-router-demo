@@ -15,7 +15,7 @@ import {
   Route,
   Link,
   Redirect,
-} from "./react-router-dom";
+} from "react-router-dom";
 
 ReactDOM.render(
   <HashRouter>

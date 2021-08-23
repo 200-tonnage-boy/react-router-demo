@@ -9,7 +9,7 @@ import {
   Route,
   Link,
   Redirect,
-} from "../../react-router-dom";
+} from "react-router-dom";
 const User = (props) => {
   return <>
     <div style={{display: 'flex', height: '50px', border: '1px solid blue', justifyContent:'space-around'}}>
