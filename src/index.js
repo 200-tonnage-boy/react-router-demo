@@ -6,7 +6,7 @@ import User from './components/User'
 import Protect from './components/Protect'
 import UserCenter from './components/Protect/UserCenter'
 import Login from './components/Protect/Login'
-
+import TT from './components/TestWithRouter'
 import App from "./App";
 import {
   BrowserRouter,
@@ -50,6 +50,7 @@ ReactDOM.render(
         <Route path="/login" component={Login}></Route>
         <Redirect to='/' />
       </Switch>
+      
       <div id="test" style={{ height: "20px", border: "1px solid", position:'absolute' ,bottom:'0px'}}></div>
     </div>
   </HashRouter>,

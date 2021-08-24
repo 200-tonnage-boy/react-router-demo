@@ -1,4 +1,4 @@
-
+import TTT from './TestWithRouter'
 const Acom = (props) => {
   console.log("组件A", props);
   // ('/b',{name:'xxx'})
@@ -13,6 +13,7 @@ const Acom = (props) => {
       >
         跳转到B
       </div>
+      <TTT />
       <div onClick={() => props.history.goBack()}>A页面go-1</div>
     </>
   );
